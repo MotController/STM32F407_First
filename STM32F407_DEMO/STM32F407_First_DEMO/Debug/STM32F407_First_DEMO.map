@@ -144,6 +144,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
+ .group         0x0000000000000000        0xc ./Core/Src/main.o
  .text          0x0000000000000000        0x0 ./Core/Src/main.o
  .data          0x0000000000000000        0x0 ./Core/Src/main.o
  .bss           0x0000000000000000        0x0 ./Core/Src/main.o
@@ -618,6 +619,95 @@ Discarded input sections
  .text          0x0000000000000000       0x14 ./Core/Startup/startup_stm32f407igtx.o
  .data          0x0000000000000000        0x0 ./Core/Startup/startup_stm32f407igtx.o
  .bss           0x0000000000000000        0x0 ./Core/Startup/startup_stm32f407igtx.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .group         0x0000000000000000        0xc ./Drivers/BSP/LED/led.o
+ .text          0x0000000000000000        0x0 ./Drivers/BSP/LED/led.o
+ .data          0x0000000000000000        0x0 ./Drivers/BSP/LED/led.o
+ .bss           0x0000000000000000        0x0 ./Drivers/BSP/LED/led.o
+ .debug_info    0x0000000000000000       0x70 ./Drivers/BSP/LED/led.o
+ .debug_abbrev  0x0000000000000000       0x28 ./Drivers/BSP/LED/led.o
+ .debug_aranges
+                0x0000000000000000       0x18 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x1ce ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0xaa8 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x28f ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x2e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x2f ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x22 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x8e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x51 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x103 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x6a ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x1df ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x1c ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x22 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0xd9 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000     0x102d ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x11f ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000    0x15e82 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x6d ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000     0x367e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x174 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x5c ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x96b ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x9fe ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x115 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x13e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0xa5 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x174 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x287 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x5f ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x236 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x12c ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x21e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x2e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x11a ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x7e ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x89 ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000      0x12d ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x1c ./Drivers/BSP/LED/led.o
+ .debug_macro   0x0000000000000000       0x10 ./Drivers/BSP/LED/led.o
+ .debug_line    0x0000000000000000      0x6ff ./Drivers/BSP/LED/led.o
+ .debug_str     0x0000000000000000    0xbaabd ./Drivers/BSP/LED/led.o
+ .comment       0x0000000000000000       0x44 ./Drivers/BSP/LED/led.o
+ .ARM.attributes
+                0x0000000000000000       0x34 ./Drivers/BSP/LED/led.o
  .group         0x0000000000000000        0xc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .group         0x0000000000000000        0xc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .group         0x0000000000000000        0xc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
@@ -2439,6 +2529,7 @@ LOAD ./Core/Src/syscalls.o
 LOAD ./Core/Src/sysmem.o
 LOAD ./Core/Src/system_stm32f4xx.o
 LOAD ./Core/Startup/startup_stm32f407igtx.o
+LOAD ./Drivers/BSP/LED/led.o
 LOAD ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 LOAD ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
 LOAD ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
@@ -2954,7 +3045,7 @@ LOAD E:/ruanjian/STM32CubeIDE_1.13.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.m
  .debug_rnglists
                 0x0000000000000279       0x66 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
 
-.debug_macro    0x0000000000000000    0x1ef6c
+.debug_macro    0x0000000000000000    0x1ef8b
  .debug_macro   0x0000000000000000      0x1c9 ./Core/Src/gpio.o
  .debug_macro   0x00000000000001c9      0xaa8 ./Core/Src/gpio.o
  .debug_macro   0x0000000000000c71      0x28f ./Core/Src/gpio.o
@@ -2993,47 +3084,48 @@ LOAD E:/ruanjian/STM32CubeIDE_1.13.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.m
  .debug_macro   0x000000000001df4b       0x89 ./Core/Src/gpio.o
  .debug_macro   0x000000000001dfd4      0x12d ./Core/Src/gpio.o
  .debug_macro   0x000000000001e101       0x1c ./Core/Src/gpio.o
- .debug_macro   0x000000000001e11d      0x1cd ./Core/Src/main.o
- .debug_macro   0x000000000001e2ea      0x1bf ./Core/Src/stm32f4xx_hal_msp.o
- .debug_macro   0x000000000001e4a9      0x1c9 ./Core/Src/stm32f4xx_it.o
- .debug_macro   0x000000000001e672      0x1b0 ./Core/Src/system_stm32f4xx.o
- .debug_macro   0x000000000001e822      0x210 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_macro   0x000000000001ea32      0x1b0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_macro   0x000000000001ebe2      0x1b6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_macro   0x000000000001ed98      0x1d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_macro   0x000000000001e11d      0x1d6 ./Core/Src/main.o
+ .debug_macro   0x000000000001e2f3       0x16 ./Core/Src/main.o
+ .debug_macro   0x000000000001e309      0x1bf ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_macro   0x000000000001e4c8      0x1c9 ./Core/Src/stm32f4xx_it.o
+ .debug_macro   0x000000000001e691      0x1b0 ./Core/Src/system_stm32f4xx.o
+ .debug_macro   0x000000000001e841      0x210 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_macro   0x000000000001ea51      0x1b0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_macro   0x000000000001ec01      0x1b6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_macro   0x000000000001edb7      0x1d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
 
-.debug_line     0x0000000000000000     0x5561
+.debug_line     0x0000000000000000     0x557d
  .debug_line    0x0000000000000000      0x725 ./Core/Src/gpio.o
- .debug_line    0x0000000000000725      0x7ad ./Core/Src/main.o
- .debug_line    0x0000000000000ed2      0x716 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x00000000000015e8      0x7d8 ./Core/Src/stm32f4xx_it.o
- .debug_line    0x0000000000001dc0      0x797 ./Core/Src/system_stm32f4xx.o
- .debug_line    0x0000000000002557       0x7a ./Core/Startup/startup_stm32f407igtx.o
- .debug_line    0x00000000000025d1      0x9fd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x0000000000002fce      0xcac ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x0000000000003c7a      0xb71 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x00000000000047eb      0xd76 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_line    0x0000000000000725      0x7c9 ./Core/Src/main.o
+ .debug_line    0x0000000000000eee      0x716 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x0000000000001604      0x7d8 ./Core/Src/stm32f4xx_it.o
+ .debug_line    0x0000000000001ddc      0x797 ./Core/Src/system_stm32f4xx.o
+ .debug_line    0x0000000000002573       0x7a ./Core/Startup/startup_stm32f407igtx.o
+ .debug_line    0x00000000000025ed      0x9fd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x0000000000002fea      0xcac ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x0000000000003c96      0xb71 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x0000000000004807      0xd76 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
 
-.debug_str      0x0000000000000000    0xbbeee
+.debug_str      0x0000000000000000    0xbbfe0
  .debug_str     0x0000000000000000    0xba94d ./Core/Src/gpio.o
                                       0xbabc0 (size before relaxing)
- .debug_str     0x00000000000ba94d      0x1d7 ./Core/Src/main.o
-                                      0xbad48 (size before relaxing)
- .debug_str     0x00000000000bab24       0x2c ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00000000000ba94d      0x2c9 ./Core/Src/main.o
+                                      0xbae3a (size before relaxing)
+ .debug_str     0x00000000000bac16       0x2c ./Core/Src/stm32f4xx_hal_msp.o
                                       0xbaaf5 (size before relaxing)
- .debug_str     0x00000000000bab50       0xc9 ./Core/Src/stm32f4xx_it.o
+ .debug_str     0x00000000000bac42       0xc9 ./Core/Src/stm32f4xx_it.o
                                       0xbaa7b (size before relaxing)
- .debug_str     0x00000000000bac19       0xdb ./Core/Src/system_stm32f4xx.o
+ .debug_str     0x00000000000bad0b       0xdb ./Core/Src/system_stm32f4xx.o
                                       0xbab53 (size before relaxing)
- .debug_str     0x00000000000bacf4       0x34 ./Core/Startup/startup_stm32f407igtx.o
+ .debug_str     0x00000000000bade6       0x34 ./Core/Startup/startup_stm32f407igtx.o
                                          0x7c (size before relaxing)
- .debug_str     0x00000000000bad28      0xafd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x00000000000bae1a      0xafd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                                       0xbb6d7 (size before relaxing)
- .debug_str     0x00000000000bb825      0x365 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x00000000000bb917      0x365 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
                                       0xbb40a (size before relaxing)
- .debug_str     0x00000000000bbb8a      0x131 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x00000000000bbc7c      0x131 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
                                       0xbacce (size before relaxing)
- .debug_str     0x00000000000bbcbb      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x00000000000bbdad      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
                                       0xbaf87 (size before relaxing)
 
 .debug_frame    0x0000000000000000      0xe28
