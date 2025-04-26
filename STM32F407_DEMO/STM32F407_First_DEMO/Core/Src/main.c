@@ -26,6 +26,7 @@
 //#include"../../BSP/BEEP/beep.h" //绝对路径
 #include"led.h"
 #include"beep.h"
+#include"key.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,7 +68,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+uint8_t key=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -96,20 +97,86 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
-//	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
-//	  HAL_Delay(500);
-//	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
-//	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
-//	  HAL_Delay(500);
+#if 0            /*LED灯及蜂鸣器实验*/
+#if LED_BEEP==1
+	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+	  HAL_Delay(500);
+	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+	  HAL_Delay(500);
+
+#elif LED_BEEP==2
+
 	  LED0(1);
 	  LED1(0);
 	  BEEP(0);
 	  HAL_Delay(500);
 	  LED0(0);
 	  LED1(1);
-	  BEEP(1);
+	  BEEP(0);
 	  HAL_Delay(500);
+#endif
+#endif
+
+#if 1
+#if KEY==1         /*KEY反转实验*/
+	  BEEP(0);
+	  if(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET)
+	  {
+		  HAL_Delay(10);
+		  if(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET)
+		  {
+			 // HAL_GPIO_TogglePin(GPIOE, LED0_Pin);
+			  LED0_TOGGLE() ;
+		  }
+		  while(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET);
+	  }
+	  HAL_Delay(10);
+	  if(HAL_GPIO_ReadPin(GPIOE, KEY1_Pin)==GPIO_PIN_RESET)
+	  {
+		  HAL_Delay(10);
+		  if(HAL_GPIO_ReadPin(GPIOE, KEY1_Pin)==GPIO_PIN_RESET)
+		  {
+			//  HAL_GPIO_TogglePin(GPIOE, LED1_Pin);
+			  LED1_TOGGLE() ;
+		  }
+		  while(HAL_GPIO_ReadPin(GPIOE, KEY1_Pin)==GPIO_PIN_RESET);
+	  }
+	  HAL_Delay(10);
+	  if(HAL_GPIO_ReadPin(GPIOE, KEY2_Pin)==GPIO_PIN_RESET)
+	  {
+		  HAL_Delay(10);
+		  if(HAL_GPIO_ReadPin(GPIOE, KEY2_Pin)==GPIO_PIN_RESET)
+		  {
+			//  HAL_GPIO_TogglePin(GPIOE, LED1_Pin);
+			// HAL_GPIO_TogglePin(GPIOE, LED0_Pin);
+			  LED0_TOGGLE() ;
+			  LED1_TOGGLE() ;
+		  }
+		  while(HAL_GPIO_ReadPin(GPIOE, KEY2_Pin)==GPIO_PIN_RESET);
+	  }
+	  HAL_Delay(10);
+
+#elif  KEY==2
+              /*KEY反转实验*/
+	  BEEP(0);
+	  key=key_scan(0);
+	  if(key==KEY0_PRES)
+	  {
+		  LED0_TOGGLE();
+	  }
+	  else if(key==KEY1_PRES)
+	  {
+		  LED1_TOGGLE();
+	  }
+	  else if(key==KEY2_PRES)
+	  {
+		  LED0_TOGGLE();
+		  LED1_TOGGLE();
+	  }
+#endif
+#endif
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

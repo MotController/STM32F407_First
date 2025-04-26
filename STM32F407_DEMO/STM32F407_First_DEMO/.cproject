@@ -50,6 +50,7 @@
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../Drivers/BSP/LED"/>
 									<listOptionValue builtIn="false" value="../Drivers/BSP/BEEP"/>
+									<listOptionValue builtIn="false" value="../Drivers/BSP/KEY"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1650321874" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

@@ -5,23 +5,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Drivers/BSP/LED/led.c 
+../Drivers/BSP/KEY/key.c 
 
 OBJS += \
-./Drivers/BSP/LED/led.o 
+./Drivers/BSP/KEY/key.o 
 
 C_DEPS += \
-./Drivers/BSP/LED/led.d 
+./Drivers/BSP/KEY/key.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Drivers/BSP/LED/%.o Drivers/BSP/LED/%.su Drivers/BSP/LED/%.cyclo: ../Drivers/BSP/LED/%.c Drivers/BSP/LED/subdir.mk
+Drivers/BSP/KEY/%.o Drivers/BSP/KEY/%.su Drivers/BSP/KEY/%.cyclo: ../Drivers/BSP/KEY/%.c Drivers/BSP/KEY/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/BSP/LED -I../Drivers/BSP/BEEP -I../Drivers/BSP/KEY -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
-clean: clean-Drivers-2f-BSP-2f-LED
+clean: clean-Drivers-2f-BSP-2f-KEY
 
-clean-Drivers-2f-BSP-2f-LED:
-	-$(RM) ./Drivers/BSP/LED/led.cyclo ./Drivers/BSP/LED/led.d ./Drivers/BSP/LED/led.o ./Drivers/BSP/LED/led.su
+clean-Drivers-2f-BSP-2f-KEY:
+	-$(RM) ./Drivers/BSP/KEY/key.cyclo ./Drivers/BSP/KEY/key.d ./Drivers/BSP/KEY/key.o ./Drivers/BSP/KEY/key.su
 
-.PHONY: clean-Drivers-2f-BSP-2f-LED
+.PHONY: clean-Drivers-2f-BSP-2f-KEY
 
