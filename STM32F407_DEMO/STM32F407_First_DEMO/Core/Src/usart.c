@@ -138,6 +138,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
+#if UART_ENable
 /**
  * @brief       串口数据接收回调函数
                 数据处理在这里进行
@@ -182,4 +183,5 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
         HAL_UART_Receive_IT(&huart1, (uint8_t *)g_rx_buffer, RXBUFFERSIZE);
     }
 }
+#endif
 /* USER CODE END 1 */

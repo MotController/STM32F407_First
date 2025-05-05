@@ -1,0 +1,2 @@
+../Core/Src/iwdg.c:30:6:MX_IWDG_Init	2
+../Core/Src/iwdg.c:59:6:iwdg_feed	1
