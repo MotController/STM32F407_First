@@ -25,6 +25,8 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/BSP/BEEP \
+Drivers/BSP/EXTI \
+Drivers/BSP/KEY \
 Drivers/BSP/LED \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

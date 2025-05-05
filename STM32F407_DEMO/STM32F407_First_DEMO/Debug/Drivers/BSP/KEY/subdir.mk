@@ -5,23 +5,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Drivers/BSP/BEEP/beep.c 
+../Drivers/BSP/KEY/key.c 
 
 OBJS += \
-./Drivers/BSP/BEEP/beep.o 
+./Drivers/BSP/KEY/key.o 
 
 C_DEPS += \
-./Drivers/BSP/BEEP/beep.d 
+./Drivers/BSP/KEY/key.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Drivers/BSP/BEEP/%.o Drivers/BSP/BEEP/%.su Drivers/BSP/BEEP/%.cyclo: ../Drivers/BSP/BEEP/%.c Drivers/BSP/BEEP/subdir.mk
+Drivers/BSP/KEY/%.o Drivers/BSP/KEY/%.su Drivers/BSP/KEY/%.cyclo: ../Drivers/BSP/KEY/%.c Drivers/BSP/KEY/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/BSP/LED -I../Drivers/BSP/BEEP -I../Drivers/BSP/KEY -I../Drivers/BSP/EXTI -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
-clean: clean-Drivers-2f-BSP-2f-BEEP
+clean: clean-Drivers-2f-BSP-2f-KEY
 
-clean-Drivers-2f-BSP-2f-BEEP:
-	-$(RM) ./Drivers/BSP/BEEP/beep.cyclo ./Drivers/BSP/BEEP/beep.d ./Drivers/BSP/BEEP/beep.o ./Drivers/BSP/BEEP/beep.su
+clean-Drivers-2f-BSP-2f-KEY:
+	-$(RM) ./Drivers/BSP/KEY/key.cyclo ./Drivers/BSP/KEY/key.d ./Drivers/BSP/KEY/key.o ./Drivers/BSP/KEY/key.su
 
-.PHONY: clean-Drivers-2f-BSP-2f-BEEP
+.PHONY: clean-Drivers-2f-BSP-2f-KEY
 
