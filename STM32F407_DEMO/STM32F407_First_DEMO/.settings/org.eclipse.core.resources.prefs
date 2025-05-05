@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
-encoding/<project>=UTF-8
+encoding//Core/Src/usart.c=GBK
+encoding//Drivers/BSP/BEEP=UTF-8
+encoding//Drivers/BSP/KEY/key.c=UTF-8
+encoding//Drivers/BSP/LED=UTF-8
+encoding/<project>=GBK

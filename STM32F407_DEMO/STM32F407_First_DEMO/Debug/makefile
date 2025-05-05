@@ -11,6 +11,8 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Drivers/BSP/LED/subdir.mk
+-include Drivers/BSP/KEY/subdir.mk
+-include Drivers/BSP/EXTI/subdir.mk
 -include Drivers/BSP/BEEP/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -63,7 +65,7 @@ main-build: STM32F407_First_DEMO.elf secondary-outputs
 
 # Tool invocations
 STM32F407_First_DEMO.elf STM32F407_First_DEMO.map: $(OBJS) $(USER_OBJS) D:\Work_place\STM32F407_First\STM32F407_DEMO\STM32F407_First_DEMO\STM32F407IGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32F407_First_DEMO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Work_place\STM32F407_First\STM32F407_DEMO\STM32F407_First_DEMO\STM32F407IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407_First_DEMO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "STM32F407_First_DEMO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Work_place\STM32F407_First\STM32F407_DEMO\STM32F407_First_DEMO\STM32F407IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407_First_DEMO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

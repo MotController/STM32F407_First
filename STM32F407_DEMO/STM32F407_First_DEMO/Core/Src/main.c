@@ -18,14 +18,17 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 //#include"../../BSP/LED/led.h"
-//#include"../../BSP/BEEP/beep.h" //缁濆璺緞
+//#include"../../BSP/BEEP/beep.h" //??????????’o????·?
 #include"led.h"
 #include"beep.h"
+#include"key.h"
+#include"exti.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,7 +60,36 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#if 0
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+   HAL_Delay(10);
+   switch(GPIO_Pin)
+   {
+     case KEY0_Pin:
+  	 if(KEY0==GPIO_PIN_RESET)
+  	 {
+  		 LED0_TOGGLE();
+  	  	 break;
+  	 }
 
+   case KEY1_Pin:
+  	 if(KEY1==GPIO_PIN_RESET)
+  	 {
+  		 LED1_TOGGLE();
+  	  	 break;
+  	 }
+
+   case KEY2_Pin:
+  	 if(KEY2==GPIO_PIN_RESET)
+  	 {
+  		 LED0_TOGGLE();
+  		 LED1_TOGGLE();
+  	  	 break;
+  	 }
+   }
+}
+#endif
 /* USER CODE END 0 */
 
 /**
@@ -67,7 +99,12 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+//	uint8_t key=0;
+	uint8_t sendbuf[5]={0x41, 0x42, 0x43, 0x44, 0x45};
+	uint8_t sendchar[]="asadfhjhdj";
+	uint8_t revbuf[6];
+    uint8_t len;
+    uint16_t times = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -88,28 +125,132 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+ // HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
-//	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
-//	  HAL_Delay(500);
-//	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
-//	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
-//	  HAL_Delay(500);
+#if 0
+#if LED_BEEP==1
+	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+	  HAL_Delay(500);
+	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+	  HAL_Delay(500);
+
+#elif LED_BEEP==2
+
 	  LED0(1);
 	  LED1(0);
 	  BEEP(0);
 	  HAL_Delay(500);
 	  LED0(0);
 	  LED1(1);
-	  BEEP(1);
+	  BEEP(0);
 	  HAL_Delay(500);
+#endif
+#endif
+
+#if 0
+#if KEY==1
+	  BEEP(0);
+	  if(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET)
+	  {
+		  HAL_Delay(10);
+		  if(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET)
+		  {
+			 // HAL_GPIO_TogglePin(GPIOE, LED0_Pin);
+			  LED0_TOGGLE() ;
+		  }
+		  while(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET);
+	  }
+	  HAL_Delay(10);
+	  if(HAL_GPIO_ReadPin(GPIOE, KEY1_Pin)==GPIO_PIN_RESET)
+	  {
+		  HAL_Delay(10);
+		  if(HAL_GPIO_ReadPin(GPIOE, KEY1_Pin)==GPIO_PIN_RESET)
+		  {
+			//  HAL_GPIO_TogglePin(GPIOE, LED1_Pin);
+			  LED1_TOGGLE() ;
+		  }
+		  while(HAL_GPIO_ReadPin(GPIOE, KEY1_Pin)==GPIO_PIN_RESET);
+	  }
+	  HAL_Delay(10);
+	  if(HAL_GPIO_ReadPin(GPIOE, KEY2_Pin)==GPIO_PIN_RESET)
+	  {
+		  HAL_Delay(10);
+		  if(HAL_GPIO_ReadPin(GPIOE, KEY2_Pin)==GPIO_PIN_RESET)
+		  {
+			//  HAL_GPIO_TogglePin(GPIOE, LED1_Pin);
+			// HAL_GPIO_TogglePin(GPIOE, LED0_Pin);
+			  LED0_TOGGLE() ;
+			  LED1_TOGGLE() ;
+		  }
+		  while(HAL_GPIO_ReadPin(GPIOE, KEY2_Pin)==GPIO_PIN_RESET);
+	  }
+	  HAL_Delay(10);
+
+#elif  KEY==2
+              /*KEY反转实验*/
+	  BEEP(0);
+	  key=key_scan(0);
+	  if(key==KEY0_PRES)
+	  {
+		  LED0_TOGGLE();
+	  }
+	  else if(key==KEY1_PRES)
+	  {
+		  LED1_TOGGLE();
+	  }
+	  else if(key==KEY2_PRES)
+	  {
+		  LED0_TOGGLE();
+		  LED1_TOGGLE();
+	  }
+#endif
+#endif
+	//   HAL_Delay(1000);
+#if 0  //′??ú???ˉ2aê?
+	  //	  HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
+//	  	  printf("′??ú′òó?￡o%s\r\n",sendchar);
+//	  	  printf("′??ú′òó?￡o%f\r\n",0.25);
+	  	  HAL_UART_Receive(&huart1, revbuf, sizeof(revbuf), HAL_MAX_DELAY);//é????ú·￠?í??á?￡?MCU?óêü￡?HAL_MAX_DELAY?àμè?óê?￡??óê?6??i×??úoó￡?μ?áá
+	  	  LED0_TOGGLE();
+	  	  HAL_UART_Transmit(&huart1, revbuf, sizeof(revbuf), 1000);//°??óê?μ?μ?êy?Y·￠?íμ?é????ú??ê?
+#endif
+
+		  if (g_usart_rx_sta & 0x8000)        /* 接收到了数据? */
+		  {
+			  len = g_usart_rx_sta & 0x3fff;  /* 得到此次接收到的数据长度 */
+			  printf("\r\n您发送的消息为:\r\n");
+
+			  HAL_UART_Transmit(&huart1,(uint8_t*)g_usart_rx_buf, len, 1000);    /* 发送接收到的数据 */
+			  while(__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TC) != SET);          /* 等待发送结束 */
+			  printf("\r\n\r\n");             /* 插入换行 */
+			  g_usart_rx_sta = 0;
+		  }
+		  else
+		  {
+			  times++;
+
+			  if (times % 5000 == 0)
+			  {
+				  printf("\r\n正点原子 STM32开发板 串口实验\r\n");
+				  printf("正点原子@ALIENTEK\r\n\r\n\r\n");
+			  }
+
+			  if (times % 200 == 0) printf("请输入数据,以回车键结束\r\n");
+
+			  if (times % 30  == 0) LED0_TOGGLE(); /* 闪烁LED,提示系统正在运行. */
+              HAL_Delay(10);
+
+		  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
