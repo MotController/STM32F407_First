@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "usart.h"
+#include "wwdg.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -90,6 +91,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
    }
 }
 #endif
+/**
+* @brief 窗口看门狗喂狗提醒中断服务回调函数
+* @param wwdg 句柄
+* @note 此函数会被 HAL_WWDG_IRQHandler()调用
+* @retval 无
+*/
+void HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef *hwwdg)
+{
+HAL_WWDG_Refresh(hwwdg); /* 更新窗口看门狗值 */
+LED1_TOGGLE(); /* LED1 闪烁 */
+}
 /* USER CODE END 0 */
 
 /**
@@ -126,12 +138,35 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
+<<<<<<< Updated upstream
   /* USER CODE BEGIN 2 */
  // HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
+=======
+  LED0(0);
+ // HAL_Delay(10);
+  MX_WWDG_Init();
+  /* USER CODE BEGIN 2 */
+ // HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
+  if(__HAL_RCC_GET_FLAG(RCC_FLAG_WWDGRST)!=RESET)
+  {
+	  printf("独立看门狗复位!!\r\n");
+	  __HAL_RCC_CLEAR_RESET_FLAGS();
+  }
+  else
+  {
+	  printf("其它看门狗复位!!\r\n");
+  }
+>>>>>>> Stashed changes
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
   while (1)
   {
 #if 0
@@ -217,6 +252,7 @@ int main(void)
 	//   HAL_Delay(1000);
 #if 0  //′??ú???ˉ2aê?
 	  //	  HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
+<<<<<<< Updated upstream
 //	  	  printf("′??ú′òó?￡o%s\r\n",sendchar);
 //	  	  printf("′??ú′òó?￡o%f\r\n",0.25);
 	  	  HAL_UART_Receive(&huart1, revbuf, sizeof(revbuf), HAL_MAX_DELAY);//é????ú·￠?í??á?￡?MCU?óêü￡?HAL_MAX_DELAY?àμè?óê?￡??óê?6??i×??úoó￡?μ?áá
@@ -232,6 +268,23 @@ int main(void)
 			  HAL_UART_Transmit(&huart1,(uint8_t*)g_usart_rx_buf, len, 1000);    /* 发送接收到的数据 */
 			  while(__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TC) != SET);          /* 等待发送结束 */
 			  printf("\r\n\r\n");             /* 插入换行 */
+=======
+//	  	  printf("锟斤拷??锟斤拷锟戒ò锟斤拷?锟斤拷o%s\r\n",sendchar);
+//	  	  printf("锟斤拷??锟斤拷锟戒ò锟斤拷?锟斤拷o%f\r\n",0.25);
+	  	  HAL_UART_Receive(&huart1, revbuf, sizeof(revbuf), HAL_MAX_DELAY);/
+	  	  LED0_TOGGLE();
+	  	  HAL_UART_Transmit(&huart1, revbuf, sizeof(revbuf), 1000);
+#endif
+#if UART_ENable
+		  if (g_usart_rx_sta & 0x8000)        /*接收到了数据? */
+		  {
+			  len = g_usart_rx_sta & 0x3fff;  /*得到此次接收到的数据长度*/
+			  printf("\r\n您发送的消息为:\r\n");
+
+			  HAL_UART_Transmit(&huart1,(uint8_t*)g_usart_rx_buf, len, 1000);    /*发送接收到的数据*/
+			  while(__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TC) != SET);          /*等待发送结束*/
+			  printf("\r\n\r\n");             /*插入换行*/
+>>>>>>> Stashed changes
 			  g_usart_rx_sta = 0;
 		  }
 		  else
@@ -241,6 +294,7 @@ int main(void)
 			  if (times % 5000 == 0)
 			  {
 				  printf("\r\n正点原子 STM32开发板 串口实验\r\n");
+<<<<<<< Updated upstream
 				  printf("正点原子@ALIENTEK\r\n\r\n\r\n");
 			  }
 
@@ -251,6 +305,28 @@ int main(void)
 
 		  }
 
+=======
+				  printf("正点原子@LIENTEK\r\n\r\n\r\n");
+			  }
+
+			  if (times % 200 == 0) printf("请输入数据，以回车键结束\r\n");
+
+			  if (times % 30  == 0) LED0_TOGGLE(); /* 闪烁LED,提示系统正在运行. */
+
+			  delay_ms(10);
+
+		  }
+#endif
+//		  key=key_scan(1);
+//		  if(key==KEY0_PRES)
+//		  {
+//			  iwdg_feed();
+//		  }
+//		  HAL_Delay(10);
+		//  HAL_Delay(900);
+		//  iwdg_feed();
+		  LED0(1);
+>>>>>>> Stashed changes
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

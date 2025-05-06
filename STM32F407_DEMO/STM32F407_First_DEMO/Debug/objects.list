@@ -6,6 +6,7 @@
 "./Core/Src/sysmem.o"
 "./Core/Src/system_stm32f4xx.o"
 "./Core/Src/usart.o"
+"./Core/Src/wwdg.o"
 "./Core/Startup/startup_stm32f407igtx.o"
 "./Drivers/BSP/BEEP/beep.o"
 "./Drivers/BSP/EXTI/exti.o"
@@ -27,3 +28,4 @@
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+"./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.o"

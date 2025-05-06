@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
 ../Core/Src/main.c:99:5:main	40	static
 ../Core/Src/main.c:265:6:SystemClock_Config	88	static
 ../Core/Src/main.c:314:6:Error_Handler	4	static,ignoring_inline_asm
+=======
+../Core/Src/main.c:100:6:HAL_WWDG_EarlyWakeupCallback	16	static
+../Core/Src/main.c:111:5:main	40	static
+../Core/Src/main.c:302:6:SystemClock_Config	88	static
+../Core/Src/main.c:351:6:Error_Handler	4	static,ignoring_inline_asm
+>>>>>>> Stashed changes

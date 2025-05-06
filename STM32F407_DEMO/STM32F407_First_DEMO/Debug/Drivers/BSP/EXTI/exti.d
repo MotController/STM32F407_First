@@ -26,6 +26,7 @@ Drivers/BSP/EXTI/exti.o: ../Drivers/BSP/EXTI/exti.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h \
  ../Drivers/BSP/LED/led.h ../Drivers/BSP/BEEP/beep.h \
  ../Drivers/BSP/KEY/key.h
 ../Drivers/BSP/EXTI/exti.h:
@@ -56,6 +57,7 @@ Drivers/BSP/EXTI/exti.o: ../Drivers/BSP/EXTI/exti.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h:
 ../Drivers/BSP/LED/led.h:
 ../Drivers/BSP/BEEP/beep.h:
 ../Drivers/BSP/KEY/key.h:

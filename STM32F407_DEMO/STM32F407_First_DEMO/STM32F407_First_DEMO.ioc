@@ -11,7 +11,12 @@ Mcu.IP0=NVIC
 Mcu.IP1=RCC
 Mcu.IP2=SYS
 Mcu.IP3=USART1
+<<<<<<< Updated upstream
 Mcu.IPNb=4
+=======
+Mcu.IP4=WWDG
+Mcu.IPNb=5
+>>>>>>> Stashed changes
 Mcu.Name=STM32F407I(E-G)Tx
 Mcu.Package=LQFP176
 Mcu.Pin0=PE2
@@ -20,6 +25,10 @@ Mcu.Pin10=PB6
 Mcu.Pin11=PB7
 Mcu.Pin12=PE0
 Mcu.Pin13=PE1
+<<<<<<< Updated upstream
+=======
+Mcu.Pin14=VP_WWDG_VS_WWDG
+>>>>>>> Stashed changes
 Mcu.Pin2=PE4
 Mcu.Pin3=PC14-OSC32_IN
 Mcu.Pin4=PC15-OSC32_OUT
@@ -49,6 +58,7 @@ NVIC.SVCall_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false
 NVIC.SysTick_IRQn=true\:2\:0\:true\:false\:true\:false\:true\:false
 NVIC.USART1_IRQn=true\:1\:0\:true\:false\:true\:true\:true\:true
 NVIC.UsageFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false
+NVIC.WWDG_IRQn=true\:2\:0\:true\:false\:true\:true\:true\:true
 PA13.Mode=Serial_Wire
 PA13.Signal=SYS_JTMS-SWDIO
 PA14.Mode=Serial_Wire
@@ -135,7 +145,11 @@ ProjectManager.ToolChainLocation=
 ProjectManager.UAScriptAfterPath=
 ProjectManager.UAScriptBeforePath=
 ProjectManager.UnderRoot=true
+<<<<<<< Updated upstream
 ProjectManager.functionlistsort=1-SystemClock_Config-RCC-false-HAL-false,2-MX_GPIO_Init-GPIO-false-HAL-true,3-MX_USART1_UART_Init-USART1-false-HAL-true
+=======
+ProjectManager.functionlistsort=1-SystemClock_Config-RCC-false-HAL-false,2-MX_GPIO_Init-GPIO-false-HAL-true,3-MX_USART1_UART_Init-USART1-false-HAL-true,4-MX_WWDG_Init-WWDG-false-HAL-true
+>>>>>>> Stashed changes
 RCC.48MHZClocksFreq_Value=84000000
 RCC.AHBFreq_Value=168000000
 RCC.APB1CLKDivider=RCC_HCLK_DIV4
@@ -176,5 +190,15 @@ SH.GPXTI4.0=GPIO_EXTI4
 SH.GPXTI4.ConfNb=1
 USART1.IPParameters=VirtualMode
 USART1.VirtualMode=VM_ASYNC
+<<<<<<< Updated upstream
+=======
+VP_WWDG_VS_WWDG.Mode=WWDG_Activate
+VP_WWDG_VS_WWDG.Signal=WWDG_VS_WWDG
+WWDG.Counter=0x7F
+WWDG.EWIMode=WWDG_EWI_ENABLE
+WWDG.IPParameters=Prescaler,Window,Counter,EWIMode
+WWDG.Prescaler=WWDG_PRESCALER_8
+WWDG.Window=0x57
+>>>>>>> Stashed changes
 board=custom
 isbadioc=false
