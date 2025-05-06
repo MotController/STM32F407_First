@@ -7,27 +7,27 @@
 
 #include"key.h"
 /**
- * @brief       鎸夐敭鎵弿鍑芥暟
- * @note        璇ュ嚱鏁版湁鍝嶅簲浼樺厛绾�(鍚屾椂鎸変笅澶氫釜鎸夐敭): WK_UP > KEY1 > KEY0!!
- * @param       mode:0 / 1, 鍏蜂綋鍚箟濡備笅:
- *   @arg       0,  涓嶆敮鎸佽繛缁寜(褰撴寜閿寜涓嬩笉鏀炬椂, 鍙湁绗竴娆¤皟鐢ㄤ細杩斿洖閿��,
- *                  蹇呴』鏉惧紑浠ュ悗, 鍐嶆鎸変笅鎵嶄細杩斿洖鍏朵粬閿��)
- *   @arg       1,  鏀寔杩炵画鎸�(褰撴寜閿寜涓嬩笉鏀炬椂, 姣忔璋冪敤璇ュ嚱鏁伴兘浼氳繑鍥為敭鍊�)
- * @retval      閿��, 瀹氫箟濡備笅:
- *              KEY0_PRES, 1, KEY0鎸変笅
- *              KEY1_PRES, 2, KEY1鎸変笅
- *              KEY2_PRES, 3, KEY2鎸変笅
+ * @brief       按键扫描函数
+ * @note        该函数有响应优先级(同时按下多个按键): WK_UP > KEY1 > KEY0!!
+ * @param       mode:0 / 1, 具体含义如下:
+ *   @arg       0,  不支持连续按(当按键按下不放时, 只有第一次调用会返回键值,
+ *                  必须松开以后, 再次按下才会返回其他键值)
+ *   @arg       1,  支持连续按(当按键按下不放时, 每次调用该函数都会返回键值)
+ * @retval      键值, 定义如下:
+ *              KEY0_PRES, 1, KEY0按下
+ *              KEY1_PRES, 2, KEY1按下
+ *              WKUP_PRES, 3, WKUP按下
  */
 uint8_t key_scan(uint8_t mode)
 {
-    static uint8_t key_up = 1;  /* 鎸夐敭鎸夋澗寮�鏍囧織 */
+    static uint8_t key_up = 1;  /* 按键按松开标志 */
     uint8_t keyval = 0;
 
-    if (mode) key_up = 1;       /* 鏀寔杩炴寜 */
+    if (mode) key_up = 1;       /* 支持连按 */
 
-    if (key_up && (KEY0 == 0 || KEY1 == 0 || KEY2 == 0))  /* 鎸夐敭鏉惧紑鏍囧織涓�1, 涓旀湁浠绘剰涓�涓寜閿寜涓嬩簡 */
+    if (key_up && (KEY0 == 0 || KEY1 == 0 || KEY2 == 0))  /* 按键松开标志为1, 且有任意一个按键按下了 */
     {
-        HAL_Delay(10);       	/* 鍘绘姈鍔� */
+        HAL_Delay(10);       	/* 去抖动 */
         key_up = 0;
 
         if (KEY0 == 0)  keyval = KEY0_PRES;
@@ -36,10 +36,10 @@ uint8_t key_scan(uint8_t mode)
 
         if (KEY2 == 0) keyval = KEY2_PRES;
     }
-    else if (KEY0 == 1 && KEY1 == 1 && KEY2 == 1) /* 娌℃湁浠讳綍鎸夐敭鎸変笅, 鏍囪鎸夐敭鏉惧紑 */
+    else if (KEY0 == 1 && KEY1 == 1 && KEY2 == 1) /* 没有任何按键按下, 标记按键松开 */
     {
         key_up = 1;
     }
 
-    return keyval;              /* 杩斿洖閿�� */
+    return keyval;              /* 返回键值 */
 }

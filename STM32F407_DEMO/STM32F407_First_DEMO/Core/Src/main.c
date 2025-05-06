@@ -25,7 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 //#include"../../BSP/LED/led.h"
-//#include"../../BSP/BEEP/beep.h" //??????????¡¯o????¡¤?
+//#include"../../BSP/BEEP/beep.h" //????ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½???
 #include"led.h"
 #include"beep.h"
 #include"key.h"
@@ -132,12 +132,12 @@ int main(void)
  // HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
   if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST)!=RESET)
   {
-	  printf("¶ÀÁ¢¿´ÃÅ¹·¸´Î»!!\r\n");
+	  printf("ç‹¬ç«‹çœ‹é—¨ç‹—å¤ä½!!\r\n");
 	  __HAL_RCC_CLEAR_RESET_FLAGS();
   }
   else
   {
-	  printf("ÆäËü¿´ÃÅ¹·¸´Î»!!\r\n");
+	  printf("å…¶å®ƒçœ‹é—¨ç‹—å¤ä½!!\r\n");
   }
   /* USER CODE END 2 */
 
@@ -148,7 +148,7 @@ int main(void)
 
   while (1)
   {
-#if 0
+#if 0            /*LED??ï¿½ï¿½???ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½????????????*/
 #if LED_BEEP==1
 	  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
 	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
@@ -171,7 +171,7 @@ int main(void)
 #endif
 
 #if 0
-#if KEY==1
+#if KEY==1         /*KEY???ï¿½ï¿½?????ï¿½ï¿½a?*/
 	  BEEP(0);
 	  if(HAL_GPIO_ReadPin(GPIOE, KEY0_Pin)==GPIO_PIN_RESET)
 	  {
@@ -210,7 +210,7 @@ int main(void)
 	  HAL_Delay(10);
 
 #elif  KEY==2
-              /*KEY·´×ªÊµÑé*/
+              /*KEY???ï¿½ï¿½?????ï¿½ï¿½a?*/
 	  BEEP(0);
 	  key=key_scan(0);
 	  if(key==KEY0_PRES)
@@ -229,23 +229,23 @@ int main(void)
 #endif
 #endif
 	//   HAL_Delay(1000);
-#if 0  //¡ä??¨²???¡¥2a¨º?
+#if 0  //ï¿½ï¿½??ï¿½ï¿½???ï¿½ï¿½2aï¿½ï¿½?
 	  //	  HAL_UART_Transmit(&huart1, sendchar, sizeof(sendchar), 1000);
-//	  	  printf("¡ä??¨²¡ä¨°¨®?¡êo%s\r\n",sendchar);
-//	  	  printf("¡ä??¨²¡ä¨°¨®?¡êo%f\r\n",0.25);
-	  	  HAL_UART_Receive(&huart1, revbuf, sizeof(revbuf), HAL_MAX_DELAY);//¨¦????¨²¡¤¡é?¨ª??¨¢?¡ê?MCU?¨®¨º¨¹¡ê?HAL_MAX_DELAY?¨¤¦Ì¨¨?¨®¨º?¡ê??¨®¨º?6??i¡Á??¨²o¨®¡ê?¦Ì?¨¢¨¢
+//	  	  printf("ï¿½ï¿½??ï¿½ï¿½ï¿½ä¨°ï¿½ï¿½?ï¿½ï¿½o%s\r\n",sendchar);
+//	  	  printf("ï¿½ï¿½??ï¿½ï¿½ï¿½ä¨°ï¿½ï¿½?ï¿½ï¿½o%f\r\n",0.25);
+	  	  HAL_UART_Receive(&huart1, revbuf, sizeof(revbuf), HAL_MAX_DELAY);//ï¿½ï¿½????ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½?MCU?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?HAL_MAX_DELAY?ï¿½ï¿½ï¿½Ì¨ï¿½?ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½ï¿½ï¿½?6??iï¿½ï¿½??ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½
 	  	  LED0_TOGGLE();
-	  	  HAL_UART_Transmit(&huart1, revbuf, sizeof(revbuf), 1000);//¡ã??¨®¨º?¦Ì?¦Ì?¨ºy?Y¡¤¡é?¨ª¦Ì?¨¦????¨²??¨º?
+	  	  HAL_UART_Transmit(&huart1, revbuf, sizeof(revbuf), 1000);//ï¿½ï¿½??ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½y?Yï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½????ï¿½ï¿½??ï¿½ï¿½?
 #endif
 #if UART_ENable
-		  if (g_usart_rx_sta & 0x8000)        /* ½ÓÊÕµ½ÁËÊı¾İ? */
+		  if (g_usart_rx_sta & 0x8000)        /* æ¥æ”¶åˆ°äº†æ•°æ®? */
 		  {
-			  len = g_usart_rx_sta & 0x3fff;  /* µÃµ½´Ë´Î½ÓÊÕµ½µÄÊı¾İ³¤¶È */
-			  printf("\r\nÄú·¢ËÍµÄÏûÏ¢Îª:\r\n");
+			  len = g_usart_rx_sta & 0x3fff;  /* å¾—åˆ°æ­¤æ¬¡æ¥æ”¶åˆ°çš„æ•°æ®é•¿åº¦ */
+			  printf("\r\næ‚¨å‘é€çš„æ¶ˆæ¯ä¸º:\r\n");
 
-			  HAL_UART_Transmit(&huart1,(uint8_t*)g_usart_rx_buf, len, 1000);    /* ·¢ËÍ½ÓÊÕµ½µÄÊı¾İ */
-			  while(__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TC) != SET);          /* µÈ´ı·¢ËÍ½áÊø */
-			  printf("\r\n\r\n");             /* ²åÈë»»ĞĞ */
+			  HAL_UART_Transmit(&huart1,(uint8_t*)g_usart_rx_buf, len, 1000);    /* å‘é€æ¥æ”¶åˆ°çš„æ•°æ® */
+			  while(__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TC) != SET);          /* ç­‰å¾…å‘é€ç»“æŸ */
+			  printf("\r\n\r\n");             /* æ’å…¥æ¢è¡Œ */
 			  g_usart_rx_sta = 0;
 		  }
 		  else
@@ -254,14 +254,15 @@ int main(void)
 
 			  if (times % 5000 == 0)
 			  {
-				  printf("\r\nÕıµãÔ­×Ó STM32¿ª·¢°å ´®¿ÚÊµÑé\r\n");
-				  printf("ÕıµãÔ­×Ó@ALIENTEK\r\n\r\n\r\n");
+				  printf("\r\næ­£ç‚¹åŸå­ STM32å¼€å‘æ¿ ä¸²å£å®éªŒ\r\n");
+				  printf("æ­£ç‚¹åŸå­@ALIENTEK\r\n\r\n\r\n");
 			  }
 
-			  if (times % 200 == 0) printf("ÇëÊäÈëÊı¾İ,ÒÔ»Ø³µ¼ü½áÊø\r\n");
+			  if (times % 200 == 0) printf("è¯·è¾“å…¥æ•°æ®,ä»¥å›è½¦é”®ç»“æŸ\r\n");
 
-			  if (times % 30  == 0) LED0_TOGGLE(); /* ÉÁË¸LED,ÌáÊ¾ÏµÍ³ÕıÔÚÔËĞĞ. */
-              HAL_Delay(10);
+			  if (times % 30  == 0) LED0_TOGGLE(); /* é—ªçƒLED,æç¤ºç³»ç»Ÿæ­£åœ¨è¿è¡Œ. */
+
+			  delay_ms(10);
 
 		  }
 #endif

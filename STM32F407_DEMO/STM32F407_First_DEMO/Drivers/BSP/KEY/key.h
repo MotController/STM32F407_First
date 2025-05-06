@@ -1,17 +1,18 @@
 /*
  * key.h
  *
- *  Created on: Apr 26, 2025
- *      Author: keqin.wang
+ *  Created on: Dec 14, 2023
+ *      Author: login
  */
 
 #ifndef BSP_KEY_KEY_H_
 #define BSP_KEY_KEY_H_
+
 #include"main.h"
-#define KEY 2
-#define KEY0    HAL_GPIO_ReadPin(GPIOE, KEY0_Pin) /*读取KEY0引脚*/
-#define KEY1    HAL_GPIO_ReadPin(GPIOE, KEY1_Pin) /*读取KEY1引脚*/
-#define KEY2    HAL_GPIO_ReadPin(GPIOE, KEY2_Pin) /*读取KEY2引脚*/
+#define KEY 3
+#define KEY0    HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) /*读取KEY0引脚*/
+#define KEY1    HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) /*读取KEY1引脚*/
+#define KEY2    HAL_GPIO_ReadPin(KEY2_GPIO_Port, KEY2_Pin) /*读取KEY2引脚*/
 
 #define KEY0_PRES   1     /*KEY0按下*/
 #define KEY1_PRES   2     /*KEY1按下*/
